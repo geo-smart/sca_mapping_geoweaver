@@ -1,0 +1,31 @@
+[{
+  "history_id" : "j9cdgwc0iny",
+  "history_input" : "# import functions and packages\nfrom functions_book_chapter_SCA import *\n\ndir_raster = './data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif'\nplanet = rasterio.open(dir_raster).read()/10000\nplanet = np.where(planet[0,:,:] == 0, np.nan, planet) # the default nan data value is 0, replace with np.nan\n\nfig, axs = plt.subplots(2,2,figsize=(15,7.5))\nim1 = axs[0,0].imshow(planet[0,:,:],cmap='jet')\naxs[0,0].set_title(\"Surface reflectance of blue band\", fontsize=16)\n\nim2 = axs[0,1].imshow(planet[1,:,:], cmap='jet')\naxs[0,1].set_title(\"Surface reflectance of green band\", fontsize=16)\n\nim3 = axs[1,0].imshow(planet[2,:,:], cmap='jet')\naxs[1,0].set_title(\"Surface reflectance of red band\", fontsize=16)\n\nim4 = axs[1,1].imshow(planet[3,:,:], cmap='jet')\naxs[1,1].set_title(\"Surface reflectance of NIR band\", fontsize=16)\n\ncbar_ax = fig.add_axes([0.95, 0.15, 0.02, 0.7])\nfig.colorbar(im1, cax=cbar_ax)\n\n# read model input features and labels \ndata = pd.read_csv('./data/samples/sample_100K.csv', index_col = False)\nprint(\"Sample dimentions:\".format(), data.shape)\nprint(data.head())\nX = data[['blue','green','red','nir']]\ny = data['label']",
+  "history_output" : "Traceback (most recent call last):\n  File \"data_preparation.py\", line 2, in <module>\n    from functions_book_chapter_SCA import *\n  File \"/home/jensen/gw-workspace/j9cdgwc0iny/functions_book_chapter_SCA.py\", line 5, in <module>\n    from numpy import arange\nModuleNotFoundError: No module named 'numpy'\n",
+  "history_begin_time" : 1679029190097,
+  "history_end_time" : 1679029191572,
+  "history_notes" : null,
+  "history_process" : "rgfp44",
+  "host_id" : "efrbpv",
+  "indicator" : "Failed"
+},{
+  "history_id" : "rpwy676ss1z",
+  "history_input" : "# import functions and packages\nfrom functions_book_chapter_SCA import *\n\ndir_raster = './data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif'\nplanet = rasterio.open(dir_raster).read()/10000\nplanet = np.where(planet[0,:,:] == 0, np.nan, planet) # the default nan data value is 0, replace with np.nan\n\nfig, axs = plt.subplots(2,2,figsize=(15,7.5))\nim1 = axs[0,0].imshow(planet[0,:,:],cmap='jet')\naxs[0,0].set_title(\"Surface reflectance of blue band\", fontsize=16)\n\nim2 = axs[0,1].imshow(planet[1,:,:], cmap='jet')\naxs[0,1].set_title(\"Surface reflectance of green band\", fontsize=16)\n\nim3 = axs[1,0].imshow(planet[2,:,:], cmap='jet')\naxs[1,0].set_title(\"Surface reflectance of red band\", fontsize=16)\n\nim4 = axs[1,1].imshow(planet[3,:,:], cmap='jet')\naxs[1,1].set_title(\"Surface reflectance of NIR band\", fontsize=16)\n\ncbar_ax = fig.add_axes([0.95, 0.15, 0.02, 0.7])\nfig.colorbar(im1, cax=cbar_ax)\n\n# read model input features and labels \ndata = pd.read_csv('./data/samples/sample_100K.csv', index_col = False)\nprint(\"Sample dimentions:\".format(), data.shape)\nprint(data.head())\nX = data[['blue','green','red','nir']]\ny = data['label']",
+  "history_output" : "Traceback (most recent call last):\n  File \"data_preparation.py\", line 2, in <module>\n    from functions_book_chapter_SCA import *\n  File \"/home/jensen/gw-workspace/rpwy676ss1z/functions_book_chapter_SCA.py\", line 5, in <module>\n    from numpy import arange\nModuleNotFoundError: No module named 'numpy'\n",
+  "history_begin_time" : 1679029162202,
+  "history_end_time" : 1679029163938,
+  "history_notes" : null,
+  "history_process" : "rgfp44",
+  "host_id" : "efrbpv",
+  "indicator" : "Done"
+},{
+  "history_id" : "kfu4yzgvk6w",
+  "history_input" : "# import functions and packages\nfrom functions_book_chapter_SCA import *\n\ndir_raster = './data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif'\nplanet = rasterio.open(dir_raster).read()/10000\nplanet = np.where(planet[0,:,:] == 0, np.nan, planet) # the default nan data value is 0, replace with np.nan\n\nfig, axs = plt.subplots(2,2,figsize=(15,7.5))\nim1 = axs[0,0].imshow(planet[0,:,:],cmap='jet')\naxs[0,0].set_title(\"Surface reflectance of blue band\", fontsize=16)\n\nim2 = axs[0,1].imshow(planet[1,:,:], cmap='jet')\naxs[0,1].set_title(\"Surface reflectance of green band\", fontsize=16)\n\nim3 = axs[1,0].imshow(planet[2,:,:], cmap='jet')\naxs[1,0].set_title(\"Surface reflectance of red band\", fontsize=16)\n\nim4 = axs[1,1].imshow(planet[3,:,:], cmap='jet')\naxs[1,1].set_title(\"Surface reflectance of NIR band\", fontsize=16)\n\ncbar_ax = fig.add_axes([0.95, 0.15, 0.02, 0.7])\nfig.colorbar(im1, cax=cbar_ax)\n\n# read model input features and labels \ndata = pd.read_csv('./data/samples/sample_100K.csv', index_col = False)\nprint(\"Sample dimentions:\".format(), data.shape)\nprint(data.head())\nX = data[['blue','green','red','nir']]\ny = data['label']",
+  "history_output" : "Traceback (most recent call last):\n  File \"data_preparation.py\", line 2, in <module>\n    from functions_book_chapter_SCA import *\n",
+  "history_begin_time" : 1679029020850,
+  "history_end_time" : 1679029023563,
+  "history_notes" : null,
+  "history_process" : "rgfp44",
+  "host_id" : "efrbpv",
+  "indicator" : "Failed"
+},]

@@ -1,3 +1,5 @@
+import pandas as pd
+
 # read model input features and labels 
 data = pd.read_csv('./data/samples/sample_100K.csv', index_col = False)
 print("Sample dimentions:".format(), data.shape)
