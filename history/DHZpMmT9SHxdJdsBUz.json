@@ -1,0 +1,51 @@
+[{
+  "history_id" : "e64tbb9igx7",
+  "history_input" : "# import functions and packages\nfrom functions_book_chapter_SCA import *\n\ndir_raster = './data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif'\nplanet = rasterio.open(dir_raster).read()/10000\nplanet = np.where(planet[0,:,:] == 0, np.nan, planet) # the default nan data value is 0, replace with np.nan\n\nfig, axs = plt.subplots(2,2,figsize=(15,7.5))\nim1 = axs[0,0].imshow(planet[0,:,:],cmap='jet')\naxs[0,0].set_title(\"Surface reflectance of blue band\", fontsize=16)\n\nim2 = axs[0,1].imshow(planet[1,:,:], cmap='jet')\naxs[0,1].set_title(\"Surface reflectance of green band\", fontsize=16)\n\nim3 = axs[1,0].imshow(planet[2,:,:], cmap='jet')\naxs[1,0].set_title(\"Surface reflectance of red band\", fontsize=16)\n\nim4 = axs[1,1].imshow(planet[3,:,:], cmap='jet')\naxs[1,1].set_title(\"Surface reflectance of NIR band\", fontsize=16)\n\ncbar_ax = fig.add_axes([0.95, 0.15, 0.02, 0.7])\nfig.colorbar(im1, cax=cbar_ax)\n\n# read model input features and labels \ndata = pd.read_csv('./data/samples/sample_100K.csv', index_col = False)\nprint(\"Sample dimentions:\".format(), data.shape)\nprint(data.head())\nX = data[['blue','green','red','nir']]\ny = data['label']",
+  "history_output" : "Traceback (most recent call last):\n  File \"rasterio/_base.pyx\", line 261, in rasterio._base.DatasetBase.__init__\n  File \"rasterio/_shim.pyx\", line 78, in rasterio._shim.open_dataset\n  File \"rasterio/_err.pyx\", line 216, in rasterio._err.exc_wrap_pointer\nrasterio._err.CPLE_OpenFailedError: ./data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif: No such file or directory\nDuring handling of the above exception, another exception occurred:\nTraceback (most recent call last):\n  File \"/Users/joe/gw-workspace/e64tbb9igx7/data_preparation.py\", line 5, in <module>\n    planet = rasterio.open(dir_raster).read()/10000\n  File \"/Users/l21-n02609-comm/opt/anaconda3/lib/python3.9/site-packages/rasterio/env.py\", line 437, in wrapper\n    return f(*args, **kwds)\n  File \"/Users/l21-n02609-comm/opt/anaconda3/lib/python3.9/site-packages/rasterio/__init__.py\", line 220, in open\n    s = DatasetReader(path, driver=driver, sharing=sharing, **kwargs)\n  File \"rasterio/_base.pyx\", line 263, in rasterio._base.DatasetBase.__init__\nrasterio.errors.RasterioIOError: ./data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif: No such file or directory\n",
+  "history_begin_time" : 1717395173356,
+  "history_end_time" : 1717395177739,
+  "history_notes" : null,
+  "history_process" : "rgfp44",
+  "host_id" : "100001",
+  "indicator" : "Failed"
+},{
+  "history_id" : "v5jxvkkyuh2",
+  "history_input" : null,
+  "history_output" : null,
+  "history_begin_time" : null,
+  "history_end_time" : 1717395177740,
+  "history_notes" : null,
+  "history_process" : "4p0kit",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "0s6agh3haf2",
+  "history_input" : null,
+  "history_output" : null,
+  "history_begin_time" : null,
+  "history_end_time" : 1717395177740,
+  "history_notes" : null,
+  "history_process" : "xcw4h1",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "z3bm7innayk",
+  "history_input" : null,
+  "history_output" : null,
+  "history_begin_time" : null,
+  "history_end_time" : 1717395177739,
+  "history_notes" : null,
+  "history_process" : "8e59lt",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "o49rdovo5gg",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717395172823,
+  "history_end_time" : 1717395172823,
+  "history_notes" : null,
+  "history_process" : "pi4g01",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+}]

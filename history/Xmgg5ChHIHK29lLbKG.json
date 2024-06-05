@@ -1,0 +1,51 @@
+[{
+  "history_id" : "f7ndfotuh1w",
+  "history_input" : "# import functions and packages\nfrom functions_book_chapter_SCA import *\n\nhome_directory = os.path.expanduser('~')\nprint(\"Home Directory:\", home_directory)\ndir_raster = f'{home_directory}/data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif'\nplanet = rasterio.open(dir_raster).read()/10000\nplanet = np.where(planet[0,:,:] == 0, np.nan, planet) # the default nan data value is 0, replace with np.nan\n\nfig, axs = plt.subplots(2,2,figsize=(15,7.5))\nim1 = axs[0,0].imshow(planet[0,:,:],cmap='jet')\naxs[0,0].set_title(\"Surface reflectance of blue band\", fontsize=16)\n\nim2 = axs[0,1].imshow(planet[1,:,:], cmap='jet')\naxs[0,1].set_title(\"Surface reflectance of green band\", fontsize=16)\n\nim3 = axs[1,0].imshow(planet[2,:,:], cmap='jet')\naxs[1,0].set_title(\"Surface reflectance of red band\", fontsize=16)\n\nim4 = axs[1,1].imshow(planet[3,:,:], cmap='jet')\naxs[1,1].set_title(\"Surface reflectance of NIR band\", fontsize=16)\n\ncbar_ax = fig.add_axes([0.95, 0.15, 0.02, 0.7])\nfig.colorbar(im1, cax=cbar_ax)\n\n# read model input features and labels \ndata = pd.read_csv(f'{home_directory}/data/samples/sample_100K.csv', index_col = False)\nprint(\"Sample dimentions:\".format(), data.shape)\nprint(data.head())\nX = data[['blue','green','red','nir']]\ny = data['label']",
+  "history_output" : "Home Directory: /Users/joe\nSample dimentions: (100000, 5)\n     blue   green     red     nir  label\n0  0.5948  0.4274  0.6514  0.6841      1\n1  0.1088  0.1296  0.1580  0.2639      0\n2  0.7735  0.5578  0.8296  0.7552      1\n3  0.1581  0.1793  0.2152  0.2700      0\n4  0.5916  0.4253  0.6499  0.6401      1\n",
+  "history_begin_time" : 1717459639210,
+  "history_end_time" : 1717459643077,
+  "history_notes" : null,
+  "history_process" : "rgfp44",
+  "host_id" : "100001",
+  "indicator" : "Done"
+},{
+  "history_id" : "0lxfqnin4do",
+  "history_input" : "\nimport os\n\nhome_directory = os.path.expanduser('~')\nprint(\"Home Directory:\", home_directory)\n# prepare data \ndata = pd.read_csv(f'{home_directory}/data/samples/sample_10K.csv', index_col = False)\nprint(\"Sample dimentions:\".format(), data.shape)\ndata.head()\nX = data[['blue','green','red','nir']]\ny = data['label']\n\n# customize models with different sample sizes\nmodels = get_models_size()\nresults, names = list(), list()\nfor name, model in models.items():\n    # evaluate models using k-fold cross-validation\n    scores = evaluate_model(model, X, y)\n    results.append(scores)\n    names.append(name)\n    # print the mean and standard deviation of models \n    print('>%s   Mean Score: %.6f (Score SD: %.6f)' % ('Sample size: ' + str(int(float(name) * 10000)), scores.mean(), scores.std()))\n    \n# display model performance \nplt.figure(figsize=(10,5))\nplt.boxplot(results, labels=names, showmeans=True)\nplt.show()\n\n# customize models with different model feature sizes\nmodels = get_models_feature()\n# evaluate the models and store results\nresults, names = list(), list()\nfor name, model in models.items():\n    # evaluate models using k-fold cross-validation\n    scores = evaluate_model(model, X, y)\n    results.append(scores)\n    names.append(name)\n    # print the mean and standard deviation of models \n    # print('>%s %.3f (%.3f)' % (name, scores.mean(), scores.std()))\n    print('>%s   Mean Score: %.6f (Score SD: %.6f)' % ('Features: ' + name, scores.mean(), scores.std()))\n# display model performance \nplt.boxplot(results, labels=names, showmeans=True)\nplt.show()\n\n# customize models with different tree numbers\nmodels = get_models_tree()\n# evaluate the models and store results\nresults, names = list(), list()\nfor name, model in models.items():\n    # evaluate models using k-fold cross-validation\n    scores = evaluate_model(model, X, y)\n    results.append(scores)\n    names.append(name)\n    # print the mean and standard deviation of models \n    # print('>%s %.3f (%.3f)' % (name, scores.mean(), scores.std()))\n    print('>%s   Mean Score: %.6f (Score SD: %.6f)' % ('Tree numbers: ' + name, scores.mean(), scores.std()))\n# display model performance \nplt.boxplot(results, labels=names, showmeans=True)\nplt.show()\n\n# customize models with different tree depths\nmodels = get_models_depth()\n# evaluate the models and store results\nresults, names = list(), list()\nfor name, model in models.items():\n     # evaluate models using k-fold cross-validation\n    scores = evaluate_model(model, X, y)\n    results.append(scores)\n    names.append(name)\n    # print the mean and standard deviation of models \n    # print('>%s %.3f (%.3f)' % (name, scores.mean(), scores.std()))\n    print('>%s   Mean Score: %.6f (Score SD: %.6f)' % ('Tree Depth: ' + name, scores.mean(), scores.std()))\n# display model performance \nplt.figure(figsize=(10,5))\nplt.boxplot(results, labels=names, showmeans=True)\nplt.show()",
+  "history_output" : "Home Directory: /Users/joe\nTraceback (most recent call last):\n  File \"/Users/joe/gw-workspace/0lxfqnin4do/hyper_parameter_tuning.py\", line 7, in <module>\n    data = pd.read_csv(f'{home_directory}/data/samples/sample_10K.csv', index_col = False)\nNameError: name 'pd' is not defined\n",
+  "history_begin_time" : 1717459887556,
+  "history_end_time" : 1717459887649,
+  "history_notes" : null,
+  "history_process" : "4p0kit",
+  "host_id" : "100001",
+  "indicator" : "Failed"
+},{
+  "history_id" : "0inir267bfy",
+  "history_input" : null,
+  "history_output" : null,
+  "history_begin_time" : null,
+  "history_end_time" : 1717459887650,
+  "history_notes" : null,
+  "history_process" : "xcw4h1",
+  "host_id" : "100001",
+  "indicator" : "Stopped"
+},{
+  "history_id" : "yltrs18v2h0",
+  "history_input" : "import pandas as pd\nimport os\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.ensemble import RandomForestClassifier\nfrom sklearn.model_selection import RepeatedStratifiedKFold\nfrom sklearn.model_selection import cross_val_score\nimport matplotlib.pyplot as plt\nfrom sklearn.inspection import permutation_importance\nimport joblib\n\nhome_directory = os.path.expanduser('~')\nprint(\"Home Directory:\", home_directory)\n\n# read model input features and labels \ndata = pd.read_csv(f'{home_directory}/data/samples/sample_100K.csv', index_col = False)\nprint(\"Sample dimentions:\".format(), data.shape)\nprint(data.head())\nX = data[['blue','green','red','nir']]\ny = data['label']\n\nX_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.96,random_state=1)\n\n# define the model\nmodel = RandomForestClassifier(n_estimators=10, max_depth=10, max_features=4)\n\n# evaluate the model\ncv = RepeatedStratifiedKFold(n_splits=10, n_repeats=1000)\nn_scores = cross_val_score(model, X_train, y_train, scoring='accuracy', cv=cv, n_jobs=-1)\n# report model performance\nprint('Mean Score: %.6f (SD: %.6f)' % (n_scores.mean(),n_scores.std()))\n\n# the histogram of the scores\nn, bins, patches = plt.hist(n_scores, density=True, facecolor='blue', alpha=0.75)\nplt.text(0.91, 15, r'mean = ' + str(n_scores.mean().round(6)) + '  '+ 'SD = ' + str(n_scores.std().round(6)))\nplt.xlim(0.9, 1.01)\nplt.xlabel('Acuuracy')\nplt.ylabel('Probability (%)')\nplt.grid(True)\nplt.show()\n\nmodel.fit(X_train,y_train)\nresult = permutation_importance(model, X_train, y_train, n_repeats=1000, random_state=42, n_jobs=2)\nprint('Permutation importance - average:'.format(), X_train.columns)\nprint([round(i, 6) for i in result.importances_mean])\n\n# displace feature importance\nfig, ax = plt.subplots(figsize=(6,5))\nax.boxplot(result.importances.T)\nax.set_title(\"Permutation Importances\", fontsize = 16)\nax.set_xticklabels(labels=X_train.columns, fontsize=14)\nplt.show()\n\n# save model \ndir_model = f\"{home_directory}/data/models/random_forest_SCA_binary.joblib\"\njoblib.dump(model, dir_model)",
+  "history_output" : "Home Directory: /Users/joe\nSample dimentions: (100000, 5)\n     blue   green     red     nir  label\n0  0.5948  0.4274  0.6514  0.6841      1\n1  0.1088  0.1296  0.1580  0.2639      0\n2  0.7735  0.5578  0.8296  0.7552      1\n3  0.1581  0.1793  0.2152  0.2700      0\n4  0.5916  0.4253  0.6499  0.6401      1\nMean Score: 0.998055 (SD: 0.002155)\nPermutation importance - average: Index(['blue', 'green', 'red', 'nir'], dtype='object')\n[0.518376, -0.000123, 0.00025, 0.000401]\nTraceback (most recent call last):\n  File \"/Users/joe/gw-workspace/yltrs18v2h0/modeL-training.py\", line 55, in <module>\n    joblib.dump(model, dir_model)\n  File \"/Users/l21-n02609-comm/opt/anaconda3/lib/python3.9/site-packages/joblib/numpy_pickle.py\", line 552, in dump\n    with open(filename, 'wb') as f:\nFileNotFoundError: [Errno 2] No such file or directory: '/Users/joe/data/models/random_forest_SCA_binary.joblib'\n",
+  "history_begin_time" : 1717459644197,
+  "history_end_time" : 1717459886570,
+  "history_notes" : null,
+  "history_process" : "8e59lt",
+  "host_id" : "100001",
+  "indicator" : "Failed"
+},{
+  "history_id" : "0eb5e2pdtqm",
+  "history_input" : "No code saved",
+  "history_output" : "Skipped",
+  "history_begin_time" : 1717459638678,
+  "history_end_time" : 1717459638678,
+  "history_notes" : null,
+  "history_process" : "pi4g01",
+  "host_id" : "100001",
+  "indicator" : "Skipped"
+}]

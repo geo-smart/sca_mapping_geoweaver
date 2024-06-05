@@ -1,7 +1,9 @@
 # import functions and packages
 from functions_book_chapter_SCA import *
 
-dir_raster = './data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif'
+home_directory = os.path.expanduser('~')
+print("Home Directory:", home_directory)
+dir_raster = f'{home_directory}/data/planet/20180528_181110_1025_3B_AnalyticMS_SR_clip.tif'
 planet = rasterio.open(dir_raster).read()/10000
 planet = np.where(planet[0,:,:] == 0, np.nan, planet) # the default nan data value is 0, replace with np.nan
 
@@ -22,7 +24,7 @@ cbar_ax = fig.add_axes([0.95, 0.15, 0.02, 0.7])
 fig.colorbar(im1, cax=cbar_ax)
 
 # read model input features and labels 
-data = pd.read_csv('./data/samples/sample_100K.csv', index_col = False)
+data = pd.read_csv(f'{home_directory}/data/samples/sample_100K.csv', index_col = False)
 print("Sample dimentions:".format(), data.shape)
 print(data.head())
 X = data[['blue','green','red','nir']]

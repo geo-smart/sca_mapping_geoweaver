@@ -1,5 +1,12 @@
+
+import os
+import pandas as pd
+from functions_book_chapter_SCA import *
+
+home_directory = os.path.expanduser('~')
+print("Home Directory:", home_directory)
 # prepare data 
-data = pd.read_csv('./data/samples/sample_10K.csv', index_col = False)
+data = pd.read_csv(f'{home_directory}/data/samples/sample_10K.csv', index_col = False)
 print("Sample dimentions:".format(), data.shape)
 data.head()
 X = data[['blue','green','red','nir']]

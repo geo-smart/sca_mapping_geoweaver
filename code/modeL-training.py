@@ -1,7 +1,18 @@
 import pandas as pd
+import os
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import RepeatedStratifiedKFold
+from sklearn.model_selection import cross_val_score
+import matplotlib.pyplot as plt
+from sklearn.inspection import permutation_importance
+import joblib
+
+home_directory = os.path.expanduser('~')
+print("Home Directory:", home_directory)
 
 # read model input features and labels 
-data = pd.read_csv('./data/samples/sample_100K.csv', index_col = False)
+data = pd.read_csv(f'{home_directory}/data/samples/sample_100K.csv', index_col = False)
 print("Sample dimentions:".format(), data.shape)
 print(data.head())
 X = data[['blue','green','red','nir']]
@@ -37,8 +48,9 @@ fig, ax = plt.subplots(figsize=(6,5))
 ax.boxplot(result.importances.T)
 ax.set_title("Permutation Importances", fontsize = 16)
 ax.set_xticklabels(labels=X_train.columns, fontsize=14)
-plt.show()
+# plt.show()
 
 # save model 
-dir_model = "./models/random_forest_SCA_binary.joblib"
+dir_model = f"{home_directory}/data/models/random_forest_SCA_binary.joblib"
 joblib.dump(model, dir_model)
+print(f"The new model is saved to {dir_model}")
