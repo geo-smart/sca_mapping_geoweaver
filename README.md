@@ -70,18 +70,17 @@ This section provides detailed instructions on how to use the workflow for the S
     - Select the latest release available and download the zip file of the source code. For example, if the latest release is `0.0.4`, download `sca_mapping_geoweaver-0.0.4.zip`.
 
 2. **Import the Workflow into Geoweaver**
-    - Open Geoweaver running on your local machine.
-    - Navigate to the workflow tab on the left side.
+    - Open Geoweaver running on your local machine. Here is the ![tutorial](https://youtu.be/jUd1dzi18EQ) to setup Geoweaver. 
+    - Navigate to the workflow tab on the left side. 
     - Select the "Import" icon in the top navigation bar.
     - Choose the downloaded zip file, for example, `sca_mapping_geoweaver-0.0.4.zip`.
     - Click on "Start" to upload the file. If the file is valid, a prompt will ask for your permission to upload. Click "OK".
     - Once the file is uploaded, Geoweaver will create a new workflow named `snow_cover_mapping`.
 
 3. **Execute the Workflow**
-    - Click on the execute icon in the top navigation bar to start the workflow execution process.
-    - A wizard will open where you need to select the host and environment. Please select appropriate host and environment.
-    - Click on "Execute" icon to initiate the workflow. Enter the required password when prompted and click "Confirm" to start executing the workflow.
-
+    - Click on the execute icon in the top navigation bar to start the workflow execution process. Here is the ![demo](https://youtu.be/PJcMNR00QoE) of sample workflow.
+    - A wizard will open where you need to select the host and environment. Please select appropriate host and environment. Here are the tutorials for  ![Environment setup](https://youtu.be/KYiEHI0rn_o) and to ![Adding Host](https://www.youtube.com/watch?v=H66AVoBBaHs)
+    - Click on "Execute" icon to initiate the workflow. Enter the required password when prompted and click "Confirm" to start executing the workflow. 
 4. **Monitor Execution and View Results**
     - The workflow execution will begin.
     - **Note**: Green indicates the process is successful, Yellow indicates the process is running and Red indicates the process has failed.
