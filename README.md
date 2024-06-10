@@ -62,9 +62,9 @@ For more details, please refer to the [Geo-SMART Jupyter Book](https://geo-smart
 
 Interested in exploring our snow cover analysis? Follow these simple steps:
 
-1. **Clone the Repository**: Get a copy of the project on your local machine.d.
+1. **Clone the Repository**: Get a copy of the project on your local machine.
 2. **Run the Analysis**: Execute the scripts to see the snow cover predictions in action.
-3. **Visualize the Results**: Check out the visualizations to understand the snow cover distribution.
+4. **Visualize the Results**: Check out the visualizations to understand the snow cover distribution.
 
 ## Workflow Graph
 
