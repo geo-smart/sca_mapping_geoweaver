@@ -1,3 +1,6 @@
+[![Geoweaver](https://img.shields.io/badge/Geoweaver-orange?style=flat-square)](https://github.com/ESIPFed/Geoweaver)
+
+
 # Snow Cover Analysis (SCA) Mapping
 
 This project aims to use advanced machine learning techniques to predict and analyze snow cover using satellite images. Whether you're a researcher, a nature enthusiast, or simply curious about how technology can help us understand our environment, this project provides a fascinating insight into snow cover analysis.
@@ -59,6 +62,7 @@ Geoweaver workflow for high resolution snow cover area mapping task. The input d
 For more details, please refer to the [Geo-SMART Jupyter Book](https://geo-smart.github.io/scm_geosmart_use_case/chapters/one.html).
 
 ## Getting Started: Using the Workflow
+
 ## Using the Workflow
 
 This section provides detailed instructions on how to use the workflow for the Snow Cover Analysis project. Follow these steps to set up and execute the workflow using Geoweaver.
@@ -66,28 +70,29 @@ This section provides detailed instructions on how to use the workflow for the S
 ### Step-by-Step Instructions
 
 1. **Download the Source Code**
-    - Visit the release page of the `geo-smart/snow_cover_mapping` repository: [Geo-SMART SCA Mapping Releases](https://github.com/geo-smart/sca_mapping_geoweaver/releases).
-    - Select the latest release available and download the zip file of the source code. For example, if the latest release is `0.0.4`, download `sca_mapping_geoweaver-0.0.4.zip`.
+
+   - Visit the release page of the `geo-smart/snow_cover_mapping` repository: [Geo-SMART SCA Mapping Releases](https://github.com/geo-smart/sca_mapping_geoweaver/releases).
+   - Select the latest release available and download the zip file of the source code. For example, if the latest release is `0.0.4`, download `sca_mapping_geoweaver-0.0.4.zip`.
 
 2. **Import the Workflow into Geoweaver**
-    - Open Geoweaver running on your local machine. [video guidance](https://youtu.be/jUd1dzi18EQ)  
-    - Click on "Weaver" in the top navigation bar. 
-    - A workspace to add a workflow opens up. Select the "Import" icon in the top navigation bar.
-    - Choose the downloaded zip file, for example, `sca_mapping_geoweaver-0.0.4.zip`.
-    - Click on "Start" to upload the file. If the file is valid, a prompt will ask for your permission to upload. Click "OK".
-    - Once the file is uploaded, Geoweaver will create a new workflow named `snow_cover_mapping`.
+
+   - Open Geoweaver running on your local machine. [video guidance](https://youtu.be/jUd1dzi18EQ)
+   - Click on "Weaver" in the top navigation bar.
+   - A workspace to add a workflow opens up. Select the "Import" icon in the top navigation bar.
+   - Choose the downloaded zip file, for example, `sca_mapping_geoweaver-0.0.4.zip`.
+   - Click on "Start" to upload the file. If the file is valid, a prompt will ask for your permission to upload. Click "OK".
+   - Once the file is uploaded, Geoweaver will create a new workflow named `snow_cover_mapping`.
 
 3. **Execute the Workflow**
-    - Click on the execute icon in the top navigation bar to start the workflow execution process. [video guidance](https://youtu.be/PJcMNR00QoE) 
-    - A wizard will open where you need to select the host [video guidance](https://youtu.be/KYiEHI0rn_o) and environment [video guidance](https://www.youtube.com/watch?v=H66AVoBBaHs). 
-    - Click on "Execute" icon to initiate the workflow. Enter the required password when prompted and click "Confirm" to start executing the workflow. 
+   - Click on the execute icon in the top navigation bar to start the workflow execution process. [video guidance](https://youtu.be/PJcMNR00QoE)
+   - A wizard will open where you need to select the host [video guidance](https://youtu.be/KYiEHI0rn_o) and environment [video guidance](https://www.youtube.com/watch?v=H66AVoBBaHs).
+   - Click on "Execute" icon to initiate the workflow. Enter the required password when prompted and click "Confirm" to start executing the workflow.
 4. **Monitor Execution and View Results**
-    - The workflow execution will begin.
-    - **Note**: Green indicates the process is successful, Yellow indicates the process is running and Red indicates the process has failed.
-    - Once the execution is complete, the results will be available immediately.
+   - The workflow execution will begin.
+   - **Note**: Green indicates the process is successful, Yellow indicates the process is running and Red indicates the process has failed.
+   - Once the execution is complete, the results will be available immediately.
 
 By following these steps, you will be able to set up and execute the snow cover mapping workflow using Geoweaver.
-
 
 ## Workflow Graph
 
