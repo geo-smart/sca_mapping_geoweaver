@@ -70,7 +70,7 @@ This section provides detailed instructions on how to use the workflow for the S
     - Select the latest release available and download the zip file of the source code. For example, if the latest release is `0.0.4`, download `sca_mapping_geoweaver-0.0.4.zip`.
 
 2. **Import the Workflow into Geoweaver**
-    - Open Geoweaver running on your local machine. Here is the [tutorial](https://youtu.be/jUd1dzi18EQ) to setup Geoweaver. 
+    - Open Geoweaver running on your local machine. [video guidance](https://youtu.be/jUd1dzi18EQ)  
     - Click on "Weaver" in the top navigation bar. 
     - A workspace to add a workflow opens up. Select the "Import" icon in the top navigation bar.
     - Choose the downloaded zip file, for example, `sca_mapping_geoweaver-0.0.4.zip`.
@@ -78,8 +78,8 @@ This section provides detailed instructions on how to use the workflow for the S
     - Once the file is uploaded, Geoweaver will create a new workflow named `snow_cover_mapping`.
 
 3. **Execute the Workflow**
-    - Click on the execute icon in the top navigation bar to start the workflow execution process. Here is the [demo](https://youtu.be/PJcMNR00QoE) of sample workflow.
-    - A wizard will open where you need to select the host and environment. Please select appropriate host and environment. Here are the tutorials for  [Environment setup](https://youtu.be/KYiEHI0rn_o) and to [Add Host](https://www.youtube.com/watch?v=H66AVoBBaHs)
+    - Click on the execute icon in the top navigation bar to start the workflow execution process. [video guidance](https://youtu.be/PJcMNR00QoE) 
+    - A wizard will open where you need to select the host [video guidance](https://youtu.be/KYiEHI0rn_o) and environment [video guidance](https://www.youtube.com/watch?v=H66AVoBBaHs). 
     - Click on "Execute" icon to initiate the workflow. Enter the required password when prompted and click "Confirm" to start executing the workflow. 
 4. **Monitor Execution and View Results**
     - The workflow execution will begin.
