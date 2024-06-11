@@ -1,4 +1,4 @@
-[![Geoweaver](https://img.shields.io/badge/Geoweaver-%23c4ff7d?style=for-the-badge&logo=readthedocs&link=https%3A%2F%2Fgithub.com%2FESIPFed%2FGeoweaver)](https://github.com/ESIPFed/Geoweaver)
+[![Geoweaver](https://custom-icon-badges.demolab.com/badge/Geoweaver-%23c4ff7d?style=for-the-badge&logo=Geoweaver&logoColor=white)](https://github.com/ESIPFed/Geoweaver)
 [![Stars](
 https://img.shields.io/github/stars/geo-smart/sca_mapping_geoweaver?style=for-the-badge
 )](https://github.com/geo-smart/sca_mapping_geoweaver/stargazers) 
