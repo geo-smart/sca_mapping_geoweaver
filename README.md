@@ -1,4 +1,11 @@
-[![Geoweaver](https://img.shields.io/badge/Geoweaver-orange?style=flat-square)](https://github.com/ESIPFed/Geoweaver)
+![Geoweaver Docs](https://img.shields.io/badge/Docs-Geoweaver-%23c4ff7d?style=for-the-badge&logo=readthedocs&link=https%3A%2F%2Fgeoweaver.dev%2F
+)
+[![Stars](
+https://img.shields.io/github/stars/geo-smart/sca_mapping_geoweaver?style=for-the-badge
+)](https://github.com/geo-smart/sca_mapping_geoweaver/stargazers) 
+[![Forks](
+https://img.shields.io/github/forks/geo-smart/sca_mapping_geoweaver?style=for-the-badge&color=%23f2b40a
+)](https://github.com/geo-smart/sca_mapping_geoweaver/network/members)
 
 
 # Snow Cover Analysis (SCA) Mapping
