@@ -72,15 +72,14 @@ This section provides detailed instructions on how to use the workflow for the S
 1. **Download the Source Code**
 
    - Visit the release page of the `geo-smart/snow_cover_mapping` repository: [Geo-SMART SCA Mapping Releases](https://github.com/geo-smart/sca_mapping_geoweaver/releases).
-   - Select the latest release available and download the zip file of the source code. For example, if the latest release is `0.0.4`, download `sca_mapping_geoweaver-0.0.4.zip`.
-
+   - Select the latest release available and download the corresponding zip file of the source code. 
+   
 2. **Import the Workflow into Geoweaver**
 
    - Open Geoweaver running on your local machine. [video guidance](https://youtu.be/jUd1dzi18EQ)
    - Click on "Weaver" in the top navigation bar.
    - A workspace to add a workflow opens up. Select the "Import" icon in the top navigation bar.
-   - Choose the downloaded zip file, for example, `sca_mapping_geoweaver-0.0.4.zip`.
-   - Click on "Start" to upload the file. If the file is valid, a prompt will ask for your permission to upload. Click "OK".
+   - Choose the downloaded zip file. Click on "Start" to upload the file. If the file is valid, a prompt will ask for your permission to upload. Click "OK".
    - Once the file is uploaded, Geoweaver will create a new workflow named `snow_cover_mapping`.
 
 3. **Execute the Workflow**
